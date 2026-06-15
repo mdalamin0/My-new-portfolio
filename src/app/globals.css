@@ -22,7 +22,7 @@
 }
 
 .container {
-  @apply max-w-[1300px] mx-auto px-4;
+  @apply max-w-[1300px] mx-auto px-4 md:px-6;
 }
 
 .blended-image {
@@ -38,7 +38,7 @@
 }
 */
 
-.btn-primary {
+/* .btn-primary {
   @apply bg-[#FF715A] text-white font-medium px-7 py-2.5 rounded-full cursor-pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   will-change: transform ;
@@ -67,6 +67,41 @@
   opacity: 0.9;
 }
 
+.btn-whatsapp:active {
+  transform: translateY(-2px) scale(0.95);
+} */
+
+.btn-primary,
+.btn-whatsapp {
+  @apply text-white font-medium py-2.5 rounded-full cursor-pointer flex items-center justify-center whitespace-nowrap;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+  min-width: 0;
+}
+
+.btn-primary {
+  @apply bg-[#FF715A] px-4 sm:px-6 md:px-7;
+}
+
+.btn-whatsapp {
+  @apply bg-[#25D366] px-4 sm:px-6 md:px-7;
+}
+
+.btn-primary:hover,
+.btn-whatsapp:hover {
+  transform: translateY(-4px);
+  opacity: 0.9;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 12px 25px rgba(255, 113, 90, 0.35);
+}
+
+.btn-whatsapp:hover {
+  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
+}
+
+.btn-primary:active,
 .btn-whatsapp:active {
   transform: translateY(-2px) scale(0.95);
 }
