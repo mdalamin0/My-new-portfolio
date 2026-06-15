@@ -33,7 +33,7 @@ export default function Navbar() {
               About
             </Link>
             <Link
-              href="/about"
+              href="#skills"
               className="font-medium transition-all duration-200 hover:text-[#FF715A]"
             >
               Skills

@@ -2,19 +2,21 @@ import React from 'react';
 
 const Skills = () => {
   return (
-    <div className="bg-[#17232D] h-24 md:h-17  items-center hidden md:flex">
-      <div className="container flex items-center justify-between text-[#36424C] font-medium text-[18px] flex-wrap">
-        <h3>HTML</h3>
-        <h3>CSS</h3>
-        <h3>Javascript</h3>
-        <h3>React</h3>
-        <h3>Next.js</h3>
-        <h3>Node.js</h3>
-        <h3>Express</h3>
-        <h3>SQL</h3>
-        <h3>postgreSQL</h3>
+    <section id='skills'>
+      <div className="bg-[#17232D] h-24 md:h-17  items-center hidden md:flex">
+        <div className="container flex items-center justify-between text-[#36424C] font-medium text-[18px] flex-wrap">
+          <h3>HTML</h3>
+          <h3>CSS</h3>
+          <h3>Javascript</h3>
+          <h3>React</h3>
+          <h3>Next.js</h3>
+          <h3>Node.js</h3>
+          <h3>Express</h3>
+          <h3>SQL</h3>
+          <h3>postgreSQL</h3>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

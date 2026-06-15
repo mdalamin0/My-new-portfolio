@@ -12,17 +12,20 @@ const HeroSection = () => {
       <div className="relative flex flex-col lg:flex-row justify-between items-center lg:min-h-[600px]">
         {/* Left Content */}
         <div className="left-content  order-1 w-full text-center lg:text-left z-10">
-          <p className="text-lg md:text-xl font-bold">
-            Hello
-            <span className="text-orange">! </span>
-            <span>I&apos;m</span>
-          </p>
+          <div className=" flex items-end justify-center lg:justify-start mb-8">
+            <div className="hidden lg:block 0 h-[2px] w-40 bg-primary" />
+            <p className="text-lg md:text-xl font-bold ml-2">
+              Hello
+              <span className="text-orange">! </span>
+              <span>I&apos;m</span>
+            </p>
+          </div>
 
           <div className="relative mt-6 lg:mt-8 flex items-center justify-center lg:justify-start">
-            <div className="hidden lg:block absolute -left-36 bottom-0 h-[2px] w-40 bg-primary" />
+            {/* <div className="hidden lg:block absolute -left-36 bottom-0 h-[2px] w-40 bg-primary" /> */}
 
             <div>
-              <h3 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl lg:ml-7">
+              <h3 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl ">
                 Md Alamin
               </h3>
               <div className="mx-auto mt-2 lg:hidden h-[2px] w-40 bg-primary" />

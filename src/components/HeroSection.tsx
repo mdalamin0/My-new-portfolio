@@ -12,7 +12,7 @@ const HeroSection = () => {
           <p className="text-xl font-bold">
             Hello<span className=" text-orange ">! </span> <span>I&apos;m</span>
           </p>
-          <div className="border- border-amber-300 relative mt-8 flex items-center gap-6">
+          <div className=" relative mt-8 flex items-center gap-6">
             <div className="h-[2px] absolute -left-36 bottom-0 w-40 bg-primary" />
             <h3 className="text-7xl ml-7 ">Md Alamin</h3>
           </div>
