@@ -1,4 +1,3 @@
-
 @import "tailwindcss";
 
 
@@ -32,6 +31,7 @@
   -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
 }
+
 /*
 .btn-outline {
   @apply border-2 border-[#FF715A] text-[#FF715A] font-medium px-7 py-2 rounded-full hover:bg-[#FF715A] hover:text-white transition-all duration-200 cursor-pointer;
@@ -105,11 +105,26 @@
 .btn-whatsapp:active {
   transform: translateY(-2px) scale(0.95);
 }
-.text-orange{
-@apply text-[#FF715A]
+
+.social-btn {
+  @apply flex items-center justify-center w-10 h-10 rounded-full border border-white/10 text-lg ;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  will-change: transform;
 }
-.bg-primary{
- @apply bg-[#FF715A]
+
+.social-btn:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.text-orange {
+  @apply text-[#FF715A]
+}
+
+.bg-primary {
+  @apply bg-[#FF715A]
 }
 
 body {
