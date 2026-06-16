@@ -3,7 +3,9 @@
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { LuMail } from "react-icons/lu";
-import { FaGithub, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
+import { FaGithub, FaFacebookF } from "react-icons/fa";
+import { BsLinkedin } from "react-icons/bs";
+import Image from "next/image";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -62,7 +64,15 @@ const ContactSection = () => {
 
             <div className="mt-8 space-y-4">
               <div className="flex items-center gap-3">
-                <LuMail className="text-orange text-2xl shrink-0" />
+                {/* <LuMail className="text-orange text-2xl shrink-0" /> */}
+                <Image
+                  src="/images/icons/Gmail.png"
+                  alt="Gmail"
+                  width={20}
+                  height={20}
+                  priority
+                  className=""
+                />
                 <a
                   href="mailto:muhammadalamin809@gmail.com"
                   className="text-sm sm:text-[16px] hover:text-primary transition-colors"
@@ -140,7 +150,7 @@ const ContactSection = () => {
 
                 <div className="flex items-center justify-center gap-4">
                   <a
-                    href="https://facebook.com/"
+                    href="https://www.facebook.com/md.al.amin.626694"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-btn"
@@ -149,16 +159,16 @@ const ContactSection = () => {
                   </a>
 
                   <a
-                    href="https://linkedin.com/"
+                    href="https://www.linkedin.com/in/md-al-amin-60aa32219/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-btn"
                   >
-                    <FaLinkedinIn />
+                    <BsLinkedin />
                   </a>
 
                   <a
-                    href="https://github.com/"
+                    href="https://github.com/mdalamin0"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-btn"

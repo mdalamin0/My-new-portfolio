@@ -32,44 +32,11 @@
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
 }
 
-/*
+
 .btn-outline {
-  @apply border-2 border-[#FF715A] text-[#FF715A] font-medium px-7 py-2 rounded-full hover:bg-[#FF715A] hover:text-white transition-all duration-200 cursor-pointer;
-}
-*/
-
-/* .btn-primary {
-  @apply bg-[#FF715A] text-white font-medium px-7 py-2.5 rounded-full cursor-pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-  will-change: transform ;
+  @apply border-2 border-[#FF715A] text-[#FF715A] font-medium px-3 sm:px-4 md:px-7 py-2 rounded-full hover:bg-[#FF715A] hover:text-white transition-all duration-300 cursor-pointer;
 }
 
-.btn-primary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(255, 113, 90, 0.35);
-  opacity: 0.9;
-}
-
-.btn-primary:active {
-  transform: translateY(-2px) scale(0.95);
-}
-
-
-.btn-whatsapp {
-  @apply bg-[#25D366] text-white font-medium px-7 py-2.5 rounded-full cursor-pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-  will-change: transform;
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
-  opacity: 0.9;
-}
-
-.btn-whatsapp:active {
-  transform: translateY(-2px) scale(0.95);
-} */
 
 .btn-primary,
 .btn-whatsapp {
@@ -116,6 +83,11 @@
 .social-btn:hover {
   transform: translateY(-3px) scale(1.08);
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+.card:hover {
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 10px 20px rgba(220, 218, 218, 0.12);
   border-color: rgba(255, 255, 255, 0.25);
 }
 

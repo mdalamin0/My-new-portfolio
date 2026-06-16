@@ -2,23 +2,26 @@ import { FaLaptopCode, FaCode, FaServer } from "react-icons/fa";
 
 const About = () => {
   return (
-    <section id="about" className="container py-8 lg:py-28">
-      <div className="grid lg:grid-cols-2 items-center  gap-16 lg:gap-24">
+    <section id="about" className="container py-16 lg:py-28">
+      <div className="grid md:grid-cols-2 items-center  gap-16 md:gap-0 lg:gap-24">
         {/* About Content - Mobile First */}
-        <div className="order-1 lg:order-2 text-center lg:text-left">
-          <h2 className="text-4xl md:text-6xl font-bold">About me</h2>
+        <div className="order-1 md:order-2 text-center md:text-left">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+            About me
+          </h2>
 
           <p className="mt-8 text-gray-300 leading-8 text-base md:text-lg">
-            I am a <span className="text-orange font-medium">AI Powerd</span> Full Stack Developer focused on
-            creating modern, responsive and scalable web applications using
-            Next.js, Node.js, Express and PostgreSQL. I love learning new
-            technologies and turning ideas into real products.
+            I am a <span className="text-orange font-medium">AI Powerd</span>{" "}
+            Full Stack Developer focused on creating modern, responsive and
+            scalable web applications using Next.js, Node.js, Express and
+            PostgreSQL. I love learning new technologies and turning ideas into
+            real products.
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-5 mt-12">
+          <div className="grid grid-cols-3  mt-12">
             <div>
-              <h3 className="text-3xl md:text-5xl font-bold">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                 5<span className="text-orange">+</span>
               </h3>
               <p className="mt-2 text-gray-400 text-sm md:text-base">
@@ -27,7 +30,7 @@ const About = () => {
             </div>
 
             <div>
-              <h3 className="text-3xl md:text-5xl font-bold">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                 100<span className="text-orange">%</span>
               </h3>
               <p className="mt-2 text-gray-400 text-sm md:text-base">
@@ -36,7 +39,7 @@ const About = () => {
             </div>
 
             <div>
-              <h3 className="text-3xl md:text-5xl font-bold">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold">
                 1<span className="text-orange">+</span>
               </h3>
               <p className="mt-2 text-gray-400 text-sm md:text-base">
@@ -47,16 +50,15 @@ const About = () => {
         </div>
 
         {/* Services Timeline */}
-        <div className="order-2  lg:order-1 relative">
-          {/* Vertical Line */}
-          <div className="absolute left-[6px] top-0 h-full w-[2px] bg-primary shadow-[0_0_10px_#FF715A]" />
-
-          <div className="space-y-12 md:space-y-16">
+        <div className="order-2  md:order-1 relative">
+          <div className="space-y- md:space-y-">
             {/* Website Development */}
             <div className="relative flex items-center gap-5">
-              <span className="absolute -left-[5px] w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_#FF715A] z-10" />
-
-              <FaLaptopCode className="ml-10 text-4xl md:text-5xl text-white" />
+              <div className="flex flex-col items-center ">
+                <div className="w-[2px] h-20 lg:h-28 bg-primary" />
+                <div className="w-2 h-2 rounded-full bg-primary mt-1" />
+              </div>
+              <FaLaptopCode className="ml-2 lg:ml-10 text-4xl md:text-5xl " />
 
               <h3 className="text-xl md:text-2xl font-semibold">
                 Website Development
@@ -65,9 +67,12 @@ const About = () => {
 
             {/* Frontend Development */}
             <div className="relative flex items-center gap-5">
-              <span className="absolute -left-[5px] w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_#FF715A] z-10" />
+              <div className="flex flex-col items-center mt-1">
+                <div className="w-[2px] h-20 lg:h-28 bg-primary" />
+                <div className="w-2 h-2 rounded-full bg-primary mt-1" />
+              </div>
 
-              <FaCode className="ml-10 text-4xl md:text-5xl text-white" />
+              <FaCode className="ml-2 lg:ml-10 text-4xl md:text-5xl " />
 
               <h3 className="text-xl md:text-2xl font-semibold">
                 Frontend Development
@@ -76,9 +81,12 @@ const About = () => {
 
             {/* Backend Development */}
             <div className="relative flex items-center gap-5">
-              <span className="absolute -left-[5px] w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_#FF715A] z-10" />
+              <div className="flex flex-col items-center  mt-1">
+                <div className="w-[2px] h-20 lg:h-28 bg-primary" />
+                <div className=" w-2 h-2 rounded-full bg-[#0f172a] mt-1" />
+              </div>
 
-              <FaServer className="ml-10 text-4xl md:text-5xl text-white" />
+              <FaServer className="ml-2 lg:ml-10 text-4xl md:text-5xl " />
 
               <h3 className="text-xl md:text-2xl font-semibold">
                 Backend Development
