@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { motion } from "motion/react";
 
 const projects = [
   {
@@ -38,7 +39,14 @@ const projects = [
       "A RESTful Issue Tracking System built with Node.js, Express, and PostgreSQL with role-based access control for managing bugs and feature requests.",
     image: "/images/project3.png",
     type: "Backend",
-    technologies: ["Node.js", "Express.js", "PostgreSQL", "JWT", "bcryptjs "],
+    technologies: [
+      "TypeScript",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "JWT",
+      "bcryptjs ",
+    ],
     repo: "https://github.com/mdalamin0/DevPulse",
     live: "https://dev-pulse-six-mu.vercel.app",
   },
@@ -46,23 +54,40 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="container py-20 lg:py-28">
+    <section id="projects" className="scroll-mt-24 container py-16">
       {/* Section Title */}
-      <div className="text-center mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{
+          duration: 0.8,
+          ease: "easeOut",
+        }}
+        className="text-center mb-16"
+      >
         <h2 className="text-4xl md:text-5xl font-bold">Projects</h2>
 
         <div className="flex flex-col items-center mt-5">
           <div className="w-[2px] h-10 bg-primary" />
           <div className="w-2 h-2 rounded-full bg-primary mt-1" />
         </div>
-      </div>
+      </motion.div>
 
       {/* Projects Grid */}
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project) => (
-          <div
+        {projects.map((project, index) => (
+          <motion.div
             key={project.id}
-            className=" group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-[0_15px_35px_rgba(255,113,90,0.12)]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{
+              duration: 0.7,
+              delay: index * 0.15,
+              ease: "easeOut",
+            }}
+            className=" group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FF715A]/30 hover:shadow-[0_15px_35px_rgba(255,113,90,0.12)]"
           >
             {/* Image */}
             <div className="relative overflow-hidden">
@@ -78,10 +103,10 @@ const Projects = () => {
               <span
                 className={`absolute top-3 right-2 px-3 py-1 rounded-full text-xs font-semibold text-white ${
                   project.type === "Full Stack"
-                    ? "bg-primary"
+                    ? "bg-[#FF715A]/80"
                     : project.type === "Frontend"
-                      ? "bg-blue-500"
-                      : "bg-green-500"
+                      ? "bg-blue-500/80"
+                      : "bg-green-500/80"
                 }`}
               >
                 {project.type}
@@ -94,10 +119,7 @@ const Projects = () => {
                 <h3 className="text-xl font-bold">{project.title}</h3>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 md:px-3 py-1 rounded-full text-xs  bg-primary/10 text-primary border border-primary/20"
-                    >
+                    <span key={tech} className="tech-badge">
                       {tech}
                     </span>
                   ))}
@@ -129,7 +151,7 @@ const Projects = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

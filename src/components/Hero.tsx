@@ -3,16 +3,25 @@
 import Image from "next/image";
 import { IoMdDownload } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "motion/react";
 import { TypeAnimation } from "react-type-animation";
-import Link from "next/link";
 
-const HeroSection = () => {
+const HeroSection = () =>{
   return (
-    <section className="container mt-8 lg:mt-0">
-      <div className="relative flex flex-col lg:flex-row justify-between items-center lg:min-h-[600px]">
+    <section id="home" className="scroll-mt-24 container lg:mt-0">
+      <div className="relative flex flex-col md:flex-row justify-between items-center md:min-h-[600px]">
         {/* Left Content */}
-        <div className="left-content  order-1 w-full text-center lg:text-left z-10">
-          <div className=" flex items-end justify-center lg:justify-start mb-8">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: "easeOut",
+          }}
+          className="left-content order-2  md:order-1 w-full text-center md:text-left z-10"
+        >
+          <div className=" flex items-end justify-center md:justify-start mb-8 mt-8 lg:mt-0">
             <div className="hidden lg:block 0 h-[2px] w-40 bg-primary" />
             <p className="text-lg md:text-xl font-bold ml-2">
               Hello
@@ -21,18 +30,18 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="relative mt-6 lg:mt-8 flex items-center justify-center lg:justify-start">
+          <div className="relative mt-6 lg:mt-8 flex items-center justify-center md:justify-start">
             {/* <div className="hidden lg:block absolute -left-36 bottom-0 h-[2px] w-40 bg-primary" /> */}
 
             <div>
               <h3 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl ">
                 Md Alamin
               </h3>
-              <div className="mx-auto mt-2 lg:hidden h-[2px] w-40 bg-primary" />
+              <div className="mx-auto  mt-2 md:hidden h-[2px] w-40 bg-primary" />
             </div>
           </div>
 
-          <h2 className="mt-8 text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight min-h-[60px] lg:min-h-[90px]">
+          <h2 className="text-orange h-18 mt-4 text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight min-h-[60px] lg:min-h-[90px]">
             <TypeAnimation
               sequence={[
                 "Full Stack Developer",
@@ -49,7 +58,7 @@ const HeroSection = () => {
             />
           </h2>
 
-          <div className=" flex w-full justify-center lg:justify-start flex-row gap-2 sm:gap-3  ">
+          <div className="mt-8 flex w-full justify-center md:justify-start flex-row gap-2 sm:gap-3  ">
             <button className="btn-primary flex-1 sm:flex-none">
               <span className="md:hidden">Resume</span>
 
@@ -58,19 +67,27 @@ const HeroSection = () => {
             </button>
 
             <button className="btn-whatsapp flex-1 sm:flex-none">
-              <span className="md:hidden">Start Chat</span>
+              <span className="lg:hidden">Start Chat</span>
 
-              <span className="hidden md:inline">Chat on WhatsApp</span>
+              <span className="hidden lg:inline">Chat on WhatsApp</span>
               <FaWhatsapp className="text-lg ml-2" />
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Right Content */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+            ease: "easeOut",
+          }}
           className="
             right-content
-            order-2
+            order-1
+            md:order-2
 
             relative
             w-full
@@ -132,7 +149,7 @@ const HeroSection = () => {
               z-20
             "
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

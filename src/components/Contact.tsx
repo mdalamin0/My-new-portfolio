@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { LuMail } from "react-icons/lu";
+import { motion } from "motion/react";
 import { FaGithub, FaFacebookF } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
 import Image from "next/image";
@@ -38,11 +38,20 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="container py-16 lg:py-18">
+    <section id="contact" className="scroll-mt-24 container pt-16 pb-12 lg:py-18">
       <div>
         <div className="grid md:grid-cols-2 gap-12 md:gap-6 lg:gap-20 items-center">
           {/* Left Content */}
-          <div className="">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 0.8,
+              ease: "easeOut",
+            }}
+            className=""
+          >
             <div className=" md:flex items-end  mb-8 text-center md:text-left">
               <div className="hidden md:block 0 h-[2px] w-40 bg-primary" />
               <span className="text-2xl md:ml-2">Contacts</span>
@@ -93,10 +102,18 @@ const ContactSection = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Form */}
-          <form
+          <motion.form
+          initial={{ opacity: 0, x: 40 }}
+whileInView={{ opacity: 1, x: 0 }}
+viewport={{ once: true, amount: 0.3 }}
+transition={{
+duration: 0.8,
+delay: 0.15,
+ease: "easeOut",
+}}
             onSubmit={handleSubmit}
             className="border border-white/10 rounded-xl p-6 md:p-8"
           >
@@ -171,14 +188,14 @@ const ContactSection = () => {
                     href="https://github.com/mdalamin0"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="social-btn"
+                    className="social-btn "
                   >
                     <FaGithub />
                   </a>
                 </div>
               </div>
             </div>
-          </form>
+          </motion.form>
         </div>
       </div>
     </section>

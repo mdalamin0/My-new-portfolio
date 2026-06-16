@@ -19,6 +19,9 @@
     --foreground: #ededed;
   }
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .container {
   @apply max-w-[1300px] mx-auto px-4 md:px-6;
@@ -74,17 +77,23 @@
 }
 
 .social-btn {
-  @apply flex items-center justify-center w-10 h-10 rounded-full border border-white/10 text-lg ;
-  transition: transform 0.3s ease, box-shadow 0.3s ease,
+  @apply flex items-center justify-center w-10 h-10 rounded-full border border-white/10 text-lg;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
     border-color 0.3s ease;
+
   will-change: transform;
 }
 
 .social-btn:hover {
+  @apply text-[#FF715A] border-[#FF715A]/40;
   transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 10px rgba(255, 113, 90, 0.12);
 }
+
 .card:hover {
   transform: translateY(-3px) scale(1.08);
   box-shadow: 0 10px 20px rgba(220, 218, 218, 0.12);
@@ -97,6 +106,13 @@
 
 .bg-primary {
   @apply bg-[#FF715A]
+}
+
+.tech-badge {
+  @apply px-3 py-1 rounded-full text-xs font-medium;
+  color: #FF715A;
+  background: rgba(255, 113, 90, 0.1);
+  border: 1px solid rgba(255, 113, 90, 0.2);
 }
 
 body {

@@ -1,11 +1,24 @@
+"use client";
+
 import { FaLaptopCode, FaCode, FaServer } from "react-icons/fa";
+import { motion } from "motion/react";
 
 const About = () => {
   return (
-    <section id="about" className="container py-16 lg:py-28">
+    <section id="about" className=" container py-16 lg:py-28">
       <div className="grid md:grid-cols-2 items-center  gap-16 md:gap-0 lg:gap-24">
         {/* About Content - Mobile First */}
-        <div className="order-1 md:order-2 text-center md:text-left">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.2,
+            ease: "easeOut",
+          }}
+          className="order-1 md:order-2 text-center md:text-left"
+        >
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold">
             About me
           </h2>
@@ -47,15 +60,24 @@ const About = () => {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Services Timeline */}
-        <div className="order-2  md:order-1 relative">
+        <motion.div
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{
+            duration: 0.8,
+            ease: "easeOut",
+          }}
+          className="order-2  md:order-1 relative"
+        >
           <div className="space-y- md:space-y-">
             {/* Website Development */}
             <div className="relative flex items-center gap-5">
               <div className="flex flex-col items-center ">
-                <div className="w-[2px] h-20 lg:h-28 bg-primary" />
+                <div className="w-[2px] h-20 md:h-28 bg-primary" />
                 <div className="w-2 h-2 rounded-full bg-primary mt-1" />
               </div>
               <FaLaptopCode className="ml-2 lg:ml-10 text-4xl md:text-5xl " />
@@ -68,7 +90,7 @@ const About = () => {
             {/* Frontend Development */}
             <div className="relative flex items-center gap-5">
               <div className="flex flex-col items-center mt-1">
-                <div className="w-[2px] h-20 lg:h-28 bg-primary" />
+                <div className="w-[2px] h-20 md:h-28 bg-primary" />
                 <div className="w-2 h-2 rounded-full bg-primary mt-1" />
               </div>
 
@@ -82,7 +104,7 @@ const About = () => {
             {/* Backend Development */}
             <div className="relative flex items-center gap-5">
               <div className="flex flex-col items-center  mt-1">
-                <div className="w-[2px] h-20 lg:h-28 bg-primary" />
+                <div className="w-[2px] h-20 md:h-28 bg-primary" />
                 <div className=" w-2 h-2 rounded-full bg-[#0f172a] mt-1" />
               </div>
 
@@ -93,7 +115,7 @@ const About = () => {
               </h3>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
