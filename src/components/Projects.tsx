@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 const projects = [
   {
@@ -54,7 +55,7 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section id="projects" className="scroll-mt-24 container py-16">
+    <section id="projects" className="scroll-mt-20 container py-16">
       {/* Section Title */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -79,13 +80,16 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
             transition={{
-              duration: 0.7,
-              delay: index * 0.15,
-              ease: "easeOut",
+              duration: 0.6,
+              delay: index * 0.14,
+              ease: "circInOut",
             }}
             className=" group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FF715A]/30 hover:shadow-[0_15px_35px_rgba(255,113,90,0.12)]"
           >
@@ -136,18 +140,20 @@ const Projects = () => {
                   href={project.repo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center btn-outline active:scale-90"
+                  className="flex-1 flex items-center justify-center gap-2 text-center  btn-outline active:scale-90"
                 >
                   Repository
+                  <FaGithub />
                 </a>
 
                 <a
                   href={project.live}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 rounded-full bg-primary px-3 sm:px-4 md:px-7 py-2.5 text-center font-medium text-white transition-all duration-300 hover:opacity-90 active:scale-90"
+                  className="flex-1 flex items-center justify-center gap-2 rounded-full bg-primary px-3 sm:px-4 md:px-7 py-2.5 text-center font-medium text-white transition-all duration-300 hover:opacity-90 active:scale-90"
                 >
                   Live
+                  <FaExternalLinkAlt className="text-sm" />
                 </a>
               </div>
             </div>

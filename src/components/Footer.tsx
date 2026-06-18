@@ -69,17 +69,32 @@ const Footer = () => {
 
           {/* Right */}
           <div className="flex items-center gap-4">
-            <a href="#" className="social-btn">
-              <FaFacebookF />
-            </a>
-
-            <a href="#" className="social-btn">
-              <FaLinkedinIn />
-            </a>
-
-            <a href="#" className="social-btn">
-              <FaGithub />
-            </a>
+            <a
+                                href="https://www.facebook.com/md.al.amin.626694"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-btn"
+                              >
+                                <FaFacebookF />
+                              </a>
+            
+                              <a
+                                href="https://www.linkedin.com/in/md-al-amin-60aa32219/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-btn"
+                              >
+                                <FaLinkedinIn />
+                              </a>
+            
+                              <a
+                                href="https://github.com/mdalamin0"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="social-btn "
+                              >
+                                <FaGithub />
+                              </a>
           </div>
         </div>
 

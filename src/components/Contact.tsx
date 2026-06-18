@@ -5,7 +5,11 @@ import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "motion/react";
 import { FaGithub, FaFacebookF } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
+import { IoIosSend  } from "react-icons/io";
 import Image from "next/image";
+import { FiSend } from "react-icons/fi";
+import { MdOutlineLocationOn } from "react-icons/md";
+import { SlLocationPin } from "react-icons/sl";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -38,7 +42,10 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="scroll-mt-24 container pt-16 pb-12 lg:py-18">
+    <section
+      id="contact"
+      className="scroll-mt-24 container pt-16 pb-12 lg:py-18"
+    >
       <div>
         <div className="grid md:grid-cols-2 gap-12 md:gap-6 lg:gap-20 items-center">
           {/* Left Content */}
@@ -73,17 +80,17 @@ const ContactSection = () => {
 
             <div className="mt-8 space-y-4">
               <div className="flex items-center gap-3">
-                {/* <LuMail className="text-orange text-2xl shrink-0" /> */}
                 <Image
                   src="/images/icons/Gmail.png"
                   alt="Gmail"
                   width={20}
                   height={20}
                   priority
-                  className=""
                 />
                 <a
-                  href="mailto:muhammadalamin809@gmail.com"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=muhammadalamin809@gmail.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm sm:text-[16px] hover:text-primary transition-colors"
                 >
                   muhammadalamin809@gmail.com
@@ -101,19 +108,23 @@ const ContactSection = () => {
                   +880 1611-148685
                 </a>
               </div>
+              <div className="flex items-center gap-3">
+                <SlLocationPin className="text-orange text-2xl shrink-0" />
+                <p>Fulbaria, Mymensingh</p>
+              </div>
             </div>
           </motion.div>
 
           {/* Form */}
           <motion.form
-          initial={{ opacity: 0, x: 40 }}
-whileInView={{ opacity: 1, x: 0 }}
-viewport={{ once: true, amount: 0.3 }}
-transition={{
-duration: 0.8,
-delay: 0.15,
-ease: "easeOut",
-}}
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 0.8,
+              delay: 0.15,
+              ease: "easeOut",
+            }}
             onSubmit={handleSubmit}
             className="border border-white/10 rounded-xl p-6 md:p-8"
           >

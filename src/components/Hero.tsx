@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "motion/react";
 import { TypeAnimation } from "react-type-animation";
 
-const HeroSection = () =>{
+const HeroSection = () => {
   return (
     <section id="home" className="scroll-mt-24 container lg:mt-0">
       <div className="relative flex flex-col md:flex-row justify-between items-center md:min-h-[600px]">
@@ -31,11 +31,10 @@ const HeroSection = () =>{
           </div>
 
           <div className="relative mt-6 lg:mt-8 flex items-center justify-center md:justify-start">
-            {/* <div className="hidden lg:block absolute -left-36 bottom-0 h-[2px] w-40 bg-primary" /> */}
 
             <div>
               <h3 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl ">
-                Md Alamin
+              Md Alamin
               </h3>
               <div className="mx-auto  mt-2 md:hidden h-[2px] w-40 bg-primary" />
             </div>
@@ -59,19 +58,28 @@ const HeroSection = () =>{
           </h2>
 
           <div className="mt-8 flex w-full justify-center md:justify-start flex-row gap-2 sm:gap-3  ">
-            <button className="btn-primary flex-1 sm:flex-none">
+            <a
+              href="resume/resume.pdf"
+              download="Md-Alamin-Resume.pdf"
+              className="btn-primary flex-1 sm:flex-none"
+            >
               <span className="md:hidden">Resume</span>
 
               <span className="hidden md:inline">My Resume</span>
               <IoMdDownload className="text-lg ml-2" />
-            </button>
+            </a>
 
-            <button className="btn-whatsapp flex-1 sm:flex-none">
+            <a
+              href="https://wa.me/8801611148685"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp flex-1 sm:flex-none"
+            >
               <span className="lg:hidden">Start Chat</span>
 
               <span className="hidden lg:inline">Chat on WhatsApp</span>
               <FaWhatsapp className="text-lg ml-2" />
-            </button>
+            </a>
           </div>
         </motion.div>
 

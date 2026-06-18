@@ -26,8 +26,8 @@ const About = () => {
           <p className="mt-8 text-gray-300 leading-8 text-base md:text-lg">
             I am a <span className="text-orange font-medium">AI Powerd</span>{" "}
             Full Stack Developer focused on creating modern, responsive and
-            scalable web applications using Next.js, Node.js, Express and
-            PostgreSQL. I love learning new technologies and turning ideas into
+            scalable web applications using Next.js, Node.js, Express,
+            PostgreSQL and Prisma. I love learning new technologies and turning ideas into
             real products.
           </p>
 

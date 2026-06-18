@@ -85,7 +85,7 @@ export default function Navbar() {
               About
             </Link>
 
-            <Link
+            {/* <Link
               href="#skills"
               className={`font-medium transition-all duration-200 ${
                 activeSection === "skills"
@@ -94,7 +94,7 @@ export default function Navbar() {
               }`}
             >
               Skills
-            </Link>
+            </Link> */}
 
             <Link
               href="#projects"
@@ -187,7 +187,7 @@ export default function Navbar() {
               About
             </Link>
 
-            <Link
+            {/* <Link
               href="#skills"
               onClick={() => setIsOpen(false)}
               className={`py-2 text-sm font-medium transition-all duration-300 ${
@@ -197,7 +197,7 @@ export default function Navbar() {
               }`}
             >
               Skills
-            </Link>
+            </Link> */}
 
             <Link
               href="#projects"
