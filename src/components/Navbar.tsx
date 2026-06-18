@@ -17,7 +17,7 @@ export default function Navbar() {
         behavior: "smooth",
         block: "start",
       });
-    }, 300);
+    }, 200);
   };
 
   useEffect(() => {

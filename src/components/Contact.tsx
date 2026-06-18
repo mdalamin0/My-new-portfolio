@@ -129,50 +129,101 @@ const ContactSection = () => {
             className="border border-white/10 rounded-xl p-6 md:p-8"
           >
             <div className="space-y-8">
-              <div>
+              {/* NAME */}
+              <div className="relative group">
                 <input
                   type="text"
                   name="name"
-                  placeholder="Name"
+                  placeholder=" "
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-transparent border-b border-white/30 pb-3 outline-none focus:border-primary transition-colors"
+                  className="peer w-full bg-transparent border-b border-white/30 pb-3 outline-none"
                 />
+
+                <label
+                  className="absolute left-0 top-0 text-white/50 transition-all duration-300 
+      peer-placeholder-shown:top-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30
+      peer-focus:-top-5 peer-focus:text-sm peer-focus:text-[#FF715A]"
+                >
+                  Name
+                </label>
+
+                {/* CENTER EXPAND LINE */}
+                <span
+                  className="absolute left-1/2 bottom-0 h-[1px] w-0 bg-[#FF715A] transition-all duration-300 
+      group-focus-within:w-full group-focus-within:left-0 
+      transform -translate-x-1/2 group-focus-within:translate-x-0"
+                ></span>
               </div>
 
-              <div>
+              {/* EMAIL */}
+              <div className="relative group">
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email"
+                  placeholder=" "
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-transparent border-b border-white/30 pb-3 outline-none focus:border-primary transition-colors"
+                  className="peer w-full bg-transparent border-b border-white/30 pb-3 outline-none"
                 />
+
+                <label
+                  className="absolute left-0 top-0 text-white/50 transition-all duration-300 
+      peer-placeholder-shown:top-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30
+      peer-focus:-top-5 peer-focus:text-sm peer-focus:text-[#FF715A]"
+                >
+                  Email
+                </label>
+
+                {/* CENTER EXPAND LINE */}
+                <span
+                  className="absolute left-1/2 bottom-0 h-[1px] w-0 bg-[#FF715A] transition-all duration-300 
+      group-focus-within:w-full group-focus-within:left-0 
+      transform -translate-x-1/2 group-focus-within:translate-x-0"
+                ></span>
               </div>
 
-              <div>
+              {/* MESSAGE */}
+              <div className="relative group">
                 <textarea
                   name="message"
-                  placeholder="Message"
                   rows={4}
+                  placeholder=" "
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  className="w-full bg-transparent border-b border-white/30 pb-3 outline-none resize-none focus:border-primary transition-colors"
+                  className="peer w-full bg-transparent border-b border-white/30 pb-3 outline-none resize-none"
                 />
+
+                <label
+                  className="absolute left-0 top-0 text-white/50 transition-all duration-300 
+      peer-placeholder-shown:top-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30
+      peer-focus:-top-5 peer-focus:text-sm peer-focus:text-[#FF715A]"
+                >
+                  Message
+                </label>
+
+                {/* CENTER EXPAND LINE */}
+                <span
+                  className="absolute left-1/2 bottom-2 h-[1px] w-0 bg-[#FF715A] transition-all duration-300 
+      group-focus-within:w-full group-focus-within:left-0 
+      transform -translate-x-1/2 group-focus-within:translate-x-0"
+                ></span>
               </div>
 
+              {/* BUTTON */}
               <button
                 type="submit"
                 className="btn-primary inline-flex items-center justify-center"
               >
                 Send Message
               </button>
-              <div className="lg:flex text-center items-center gap-3 xl:gap-4  mt-10 border-t-2 border-white/10 pt-6">
-                <h4 className=" font-medium mb-2 lg:mb-0">
+
+              {/* SOCIAL */}
+              <div className="lg:flex text-center items-center gap-3 xl:gap-4 mt-10 border-t-2 border-white/10 pt-6">
+                <h4 className="font-medium mb-2 lg:mb-0">
                   Follow Me on Social Media:
                 </h4>
 
@@ -180,7 +231,6 @@ const ContactSection = () => {
                   <a
                     href="https://www.facebook.com/md.al.amin.626694"
                     target="_blank"
-                    rel="noopener noreferrer"
                     className="social-btn"
                   >
                     <FaFacebookF />
@@ -189,7 +239,6 @@ const ContactSection = () => {
                   <a
                     href="https://www.linkedin.com/in/md-al-amin-60aa32219/"
                     target="_blank"
-                    rel="noopener noreferrer"
                     className="social-btn"
                   >
                     <BsLinkedin />
@@ -198,8 +247,7 @@ const ContactSection = () => {
                   <a
                     href="https://github.com/mdalamin0"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-btn "
+                    className="social-btn"
                   >
                     <FaGithub />
                   </a>
