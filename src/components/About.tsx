@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 
 const About = () => {
   return (
-    <section id="about" className=" container py-16 lg:py-28">
+    <section id="about" className=" scroll-mt-14 container py-16 lg:py-28">
       <div className="grid md:grid-cols-2 items-center  gap-16 md:gap-0 lg:gap-24">
         {/* About Content - Mobile First */}
         <motion.div

@@ -9,6 +9,17 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
 
+  const handleMobileScroll = (id: string) => {
+    setIsOpen(false);
+
+    setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 300);
+  };
+
   useEffect(() => {
     const sections = ["home", "about", "skills", "projects", "contact"];
 
@@ -50,14 +61,13 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="#home" className="flex items-center">
-            
             <Image
               src="/images/logo.png"
               alt="Alamin"
               width={80}
               height={80}
               priority
-              className="w-[110px] sm:w-[130px] lg:w-[150px] h-[90] md:h-[110px] "
+              className="w-[100px] sm:w-[120px] lg:w-[150px] h-[80] md:h-[110px] "
             />
           </Link>
 
@@ -163,21 +173,19 @@ export default function Navbar() {
           }`}
         >
           <div className="flex flex-col gap-2 border-t border-gray-200 pt-4">
-            <Link
-              href="#home"
-              onClick={() => setIsOpen(false)}
-              className={`py-2 text-sm font-medium transition-all duration-300 ${
+            <button
+              onClick={() => handleMobileScroll("home")}
+              className={` py-2 text-sm font-medium transition-all duration-300 ${
                 activeSection === "home"
                   ? "text-orange border-b border-[#FF715A]"
                   : "hover:text-[#FF715A]"
               }`}
             >
               Home
-            </Link>
+            </button>
 
-            <Link
-              href="#about "
-              onClick={() => setIsOpen(false)}
+            <button
+              onClick={() => handleMobileScroll("about")}
               className={`py-2 text-sm font-medium transition-all duration-300 ${
                 activeSection === "about"
                   ? "text-orange border-b border-[#FF715A]"
@@ -185,7 +193,7 @@ export default function Navbar() {
               }`}
             >
               About
-            </Link>
+            </button>
 
             {/* <Link
               href="#skills"
@@ -199,9 +207,8 @@ export default function Navbar() {
               Skills
             </Link> */}
 
-            <Link
-              href="#projects"
-              onClick={() => setIsOpen(false)}
+            <button
+              onClick={() => handleMobileScroll("projects")}
               className={`py-2 text-sm font-medium transition-all duration-300 ${
                 activeSection === "projects"
                   ? "text-orange border-b border-[#FF715A]"
@@ -209,10 +216,9 @@ export default function Navbar() {
               }`}
             >
               Projects
-            </Link>
-            <Link
-              href="#contact"
-              onClick={() => setIsOpen(false)}
+            </button>
+            <button
+              onClick={() => handleMobileScroll("contact")}
               className={`py-2 text-sm font-medium transition-all duration-300 ${
                 activeSection === "contact"
                   ? "text-orange border-b border-[#FF715A]"
@@ -220,7 +226,7 @@ export default function Navbar() {
               }`}
             >
               Contact
-            </Link>
+            </button>
           </div>
         </div>
       </div>
