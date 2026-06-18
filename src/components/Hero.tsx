@@ -66,7 +66,7 @@ const HeroSection = () => {
               <span className="md:hidden">Resume</span>
 
               <span className="hidden md:inline">My Resume</span>
-              <IoMdDownload className="text-lg ml-2" />
+              <IoMdDownload className="text-xl ml-2" />
             </a>
 
             <a
@@ -78,7 +78,7 @@ const HeroSection = () => {
               <span className="lg:hidden">Start Chat</span>
 
               <span className="hidden lg:inline">Chat on WhatsApp</span>
-              <FaWhatsapp className="text-lg ml-2" />
+              <FaWhatsapp className="text-xl ml-2" />
             </a>
           </div>
         </motion.div>

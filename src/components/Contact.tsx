@@ -5,13 +5,12 @@ import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "motion/react";
 import { FaGithub, FaFacebookF } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
-import { IoIosSend  } from "react-icons/io";
 import Image from "next/image";
-import { FiSend } from "react-icons/fi";
-import { MdOutlineLocationOn } from "react-icons/md";
 import { SlLocationPin } from "react-icons/sl";
+import { toast } from "react-toastify";
 
 const ContactSection = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,18 +26,35 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) =>{
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+setLoading(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    console.log(formData);
+      if (!res.ok) {
+        throw new Error("Failed to send");
+      }
 
-    // TODO: Send email / API call
+      toast.success("Message sent successfully!");
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error(error);
+      toast.error("Failed to send message!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -142,9 +158,20 @@ const ContactSection = () => {
                 />
 
                 <label
-                  className="absolute left-0 top-0 text-white/50 transition-all duration-300 
-      peer-placeholder-shown:top-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30
-      peer-focus:-top-5 peer-focus:text-sm peer-focus:text-[#FF715A]"
+                  className="
+    absolute left-0 top-0 text-white/40
+    transition-all duration-300 pointer-events-none
+
+    peer-placeholder-shown:top-0
+    peer-placeholder-shown:text-base
+
+    peer-focus:-top-5
+    peer-focus:text-sm
+    peer-focus:text-[#FF715A]
+
+    peer-[&:not(:placeholder-shown)]:-top-5
+    peer-[&:not(:placeholder-shown)]:text-sm
+  "
                 >
                   Name
                 </label>
@@ -170,9 +197,20 @@ const ContactSection = () => {
                 />
 
                 <label
-                  className="absolute left-0 top-0 text-white/50 transition-all duration-300 
-      peer-placeholder-shown:top-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30
-      peer-focus:-top-5 peer-focus:text-sm peer-focus:text-[#FF715A]"
+                  className="
+    absolute left-0 top-0 text-white/40
+    transition-all duration-300 pointer-events-none
+
+    peer-placeholder-shown:top-0
+    peer-placeholder-shown:text-base
+
+    peer-focus:-top-5
+    peer-focus:text-sm
+    peer-focus:text-[#FF715A]
+
+    peer-[&:not(:placeholder-shown)]:-top-5
+    peer-[&:not(:placeholder-shown)]:text-sm
+  "
                 >
                   Email
                 </label>
@@ -198,9 +236,20 @@ const ContactSection = () => {
                 />
 
                 <label
-                  className="absolute left-0 top-0 text-white/50 transition-all duration-300 
-      peer-placeholder-shown:top-0 peer-placeholder-shown:text-base peer-placeholder-shown:text-white/30
-      peer-focus:-top-5 peer-focus:text-sm peer-focus:text-[#FF715A]"
+                  className="
+    absolute left-0 top-0 text-white/40
+    transition-all duration-300 pointer-events-none
+
+    peer-placeholder-shown:top-0
+    peer-placeholder-shown:text-base
+
+    peer-focus:-top-5
+    peer-focus:text-sm
+    peer-focus:text-[#FF715A]
+
+    peer-[&:not(:placeholder-shown)]:-top-5
+    peer-[&:not(:placeholder-shown)]:text-sm
+  "
                 >
                   Message
                 </label>
@@ -216,9 +265,12 @@ const ContactSection = () => {
               {/* BUTTON */}
               <button
                 type="submit"
-                className="btn-primary inline-flex items-center justify-center"
+                disabled={loading}
+                className={`btn-primary inline-flex items-center justify-center ${
+                  loading ? "opacity-70 cursor-not-allowed cu" : ""
+                }`}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
 
               {/* SOCIAL */}
