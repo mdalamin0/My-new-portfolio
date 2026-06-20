@@ -24,9 +24,9 @@ const About = () => {
           </h2>
 
           <p className="mt-8 text-gray-300 leading-8 text-base md:text-lg">
-            I am a <span className="text-orange font-medium">AI Powerd</span>{" "}
+            I am a <span className="text-orange font-medium">AI Powered</span>{" "}
             Full Stack Developer focused on creating modern, responsive and
-            scalable web applications using Next.js, Node.js, Express,
+            scalable web applications using Next.js, TypeScript, Node.js, Express,
             PostgreSQL and Prisma. I love learning new technologies and turning ideas into
             real products.
           </p>

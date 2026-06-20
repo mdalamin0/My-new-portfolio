@@ -11,8 +11,8 @@ export default function Home() {
     <div className=" text-gray-200">
       <Navbar />
       <Hero/>
-      <Skills />
       <About/>
+      <Skills />
       <Projects/>
       <ContactSection/>
       <Footer/>

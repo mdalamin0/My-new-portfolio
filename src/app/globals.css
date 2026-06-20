@@ -28,9 +28,7 @@ html {
 }
 
 .blended-image {
-  width: 100%;
-  max-width: 530px;
-  height: auto;
+  max-width: 600px;
   -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
   mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0) 70%);
 }
