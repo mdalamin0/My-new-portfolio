@@ -11,13 +11,13 @@ export default function Home() {
   return (
     <div className=" text-gray-200">
       <Navbar />
-      <Hero/>
-      <About/>
+       <Hero/>
+       <About/>
       <Skills />
       <Education/>
       <Projects/>
       <ContactSection/>
-      <Footer/>
+      <Footer/> 
     </div>
   );
 }

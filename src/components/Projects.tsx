@@ -11,16 +11,32 @@ const projects = [
     id: 1,
     title: "The Dragon News Hub",
     description:
-      "I recently developed a fully responsive news web application where users can explore categorized news, view detailed articles, and authenticate securely.",
+      "The Dragon News Hub is a modern and fully responsive news web application that provides users with an engaging and seamless news-reading experience. The platform allows users to explore news through category-based filtering, access detailed articles via dynamic routing, and securely authenticate using Email/Password, Google, or GitHub accounts. It features protected routes with intelligent redirection to preserve user navigation flow, a dynamic news details page with extended content viewing, and real-time elements such as a live date display and breaking news marquee. Built with React.js, React Router, Context API, and Firebase Authentication, the application demonstrates strong frontend development skills in authentication, state management, routing, responsive UI design, and modern React architecture while delivering a clean, user-friendly, and performance-focused experience across all devices.",
     image: "/images/project1.jpg",
     type: "Frontend",
-    technologies: ["React.js", "Tailwind CSS", "Context API", "Firebase"],
+    technologies: [
+      "React.js",
+      "Tailwind CSS",
+      "DaisyUI",
+      "Context API",
+      "Firebase",
+    ],
     features: [
       "Developed a responsive news portal with category-based filtering and dynamic content rendering.",
       "Implemented protected routes with authentication (Email/Password, Google, GitHub) using Firebase.",
       "Built a dynamic news details page with conditional navigation (redirect to login if unauthenticated).",
       "Integrated real-time UI features like live date display and latest news marquee",
       "Responsive design for all devices",
+    ],
+    challenges_faced: [
+      "Implementing protected routes while ensuring users are redirected back to their intended page after successful login.",
+      "Creating a responsive layout that provides an optimal reading experience across desktop, tablet, and mobile devices.",
+    ],
+    future_plans: [
+      "Integrate a real-time news API to display live and continuously updated news content.",
+      "Add bookmarking functionality so users can save articles for later reading.",
+      "Implement a search feature to help users quickly find news articles by keywords.",
+      "Add a comment and reaction system to increase user engagement.",
     ],
     repo: "https://github.com/mdalamin0/The-Dragon-News-Hub",
     live: "https://the-dragon-news-hub.web.app/category/0",
@@ -29,7 +45,7 @@ const projects = [
     id: 2,
     title: "Hero App House",
     description:
-      "A responsive web application that allows users to explore apps, view detailed information, and manage installations with persistent local storage support.",
+      "Hero App House is a responsive web application that enables users to discover and explore trending applications through a clean and intuitive interface. Users can access detailed app pages with comprehensive information and manage installations through a persistent app management system. The application features dynamic routing, real-time installation status updates, and LocalStorage-based data persistence, ensuring a seamless experience across browsing sessions. A dedicated installation management page allows users to view and uninstall apps effortlessly, demonstrating efficient client-side data handling, interactive user experiences, and responsive frontend development practices.",
     image: "/images/project2.jpg",
     type: "Frontend",
     technologies: [
@@ -39,12 +55,23 @@ const projects = [
       "LocalStorage",
       "Axios",
     ],
+
     features: [
       "Developed a responsive web application to browse trending and all apps with a clean card-based UI.",
       "Implemented dynamic routing to display individual app details pages with full information.",
       "Integrated an app installation system using Local Storage with real-time UI updates.",
       "Built an installation management page allowing users to view and uninstall apps with persistent datahandling.",
       "Responsive design for all devices",
+    ],
+    challenges_faced: [
+      "While implementing the installation system, ensuring that app data remained persistent across page reloads using LocalStorage was a key challenge.",
+      "Managing real-time UI updates for installation states (Install → Installed → Disabled) without requiring a page refresh required careful state synchronization.",
+    ],
+    future_plans: [
+      "Add user authentication to allow users to manage their installed apps across multiple devices.",
+      "Integrate a backend database for storing installation data instead of relying solely on LocalStorage.",
+      "Develop an admin dashboard for managing and publishing applications dynamically.",
+      "Introduce pagination and lazy loading to improve performance when handling larger app collections.",
     ],
     repo: "https://github.com/mdalamin0/Hero-IO-App-House",
     live: "https://hero-io-app-house.vercel.app/",
@@ -53,7 +80,7 @@ const projects = [
     id: 3,
     title: "DevPulse Issue Tracker API",
     description:
-      "A RESTful Issue Tracking System built with Node.js, Express, and PostgreSQL with role-based access control for managing bugs and feature requests.",
+      "DevPulse is a RESTful Issue Tracking API designed to streamline bug reporting and feature request management through a secure and role-based workflow. The system enables contributors to create and manage issues while maintainers can oversee project tasks with controlled access permissions. It features JWT-based authentication, secure password hashing, role-based authorization, and complete CRUD operations for issue management. Built with a modular backend architecture and PostgreSQL database integration, the API follows clean REST principles and provides structured issue data, including reporter information, ensuring secure, scalable, and maintainable server-side application development.",
     image: "/images/project3.png",
     type: "Backend",
     technologies: [
@@ -66,9 +93,22 @@ const projects = [
     ],
     features: [
       "Built a role-based issue tracking system for managing bugs and feature requests.",
-      "Implemented issue creation, status tracking, updating, and deletion workflows",
-      " Added secure user authentication and protected access to project resources.",
-      
+      "Implemented secure JWT-based authentication with protected API routes and role-based authorization.",
+      "Developed complete CRUD functionality for creating, updating, tracking, and deleting issues.",
+      "Integrated PostgreSQL for efficient data storage and management of users and issue records.",
+      "Added secure password hashing using bcryptjs to enhance user account security.",
+      "Designed a modular and scalable Express.js architecture for improved maintainability and code organization.",
+    ],
+    challenges_faced: [
+      "When I am Implementing secure JWT authentication and role-based access control.",
+      "Designing scalable database relationships between users and issues.",
+      "Managing authorization rules and protected API endpoints.",
+    ],
+    future_plans: [
+      "Add issue assignment and notification systems.",
+      "Implement advanced search and filtering capabilities.",
+      "Support file uploads for issue reporting.",
+      "Build a frontend dashboard and add automated testing.",
     ],
     repo: "https://github.com/mdalamin0/DevPulse",
     live: "https://dev-pulse-six-mu.vercel.app",
@@ -96,7 +136,7 @@ const projects = [
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   return (
-    <section id="projects" className="scroll-mt-20 container py-16">
+    <section id="projects" className="scroll-mt-20 container py-12">
       {/* Section Title */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -121,16 +161,13 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{
-              once: true,
-              amount: 0.2,
-            }}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{
-              duration: 0.6,
-              delay: index * 0.14,
-              ease: "circInOut",
+              duration: 0.8,
+              delay: index * 0.15,
+              ease: "easeOut",
             }}
             className=" group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FF715A]/30 hover:shadow-[0_15px_35px_rgba(255,113,90,0.12)]"
           >
@@ -171,7 +208,9 @@ const Projects = () => {
                 </div>
 
                 <p className="mt-3 text-gray-300 leading-relaxed text-sm">
-                  {project.description}
+                  {project.description.length > 150
+                    ? `${project.description.slice(0, 150)}...`
+                    : project.description}
                 </p>
               </div>
 

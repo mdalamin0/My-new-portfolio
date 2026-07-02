@@ -24,7 +24,7 @@ const educationData = [
 
 const Education = () => {
   return (
-    <section id="education" className="scroll-mt-20 container py-16">
+    <section id="education" className="scroll-mt-20 container pt-16 pb-5">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}

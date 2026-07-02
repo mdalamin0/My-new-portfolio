@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect } from "react";
 import { FaExternalLinkAlt, FaGithub, FaTimes } from "react-icons/fa";
 import { motion } from "motion/react";
@@ -13,6 +12,8 @@ export type Project = {
   type: string;
   technologies: string[];
   features: string[];
+  challenges_faced: string[];
+  future_plans: string[];
   repo: string;
   live: string;
 };
@@ -75,17 +76,6 @@ export default function DetailsModal({ project, onClose }: Props) {
           </button>
         </div>
 
-        {/* Project Image */}
-        {/* <div className="overflow-hidden rounded-xl border border-white/10">
-          <Image
-            src={project.image}
-            alt={project.title}
-            width={1200}
-            height={700}
-            className="w-full h-auto object-cover"
-          />
-        </div> */}
-
         {/* Technologies */}
         <h2 className="text-2xl md:text-3xl font-bold">{project.title}</h2>
         <div className="mt-8">
@@ -117,8 +107,34 @@ export default function DetailsModal({ project, onClose }: Props) {
           <ul className="space-y-3">
             {project.features.map((feature) => (
               <li key={feature} className="flex items-start gap-3">
-                <span className="text-primary mt-1">✓</span>
+                <span className="text-orange mt-1">✓</span>
                 <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* challenges faced */}
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold mb-4">Challenges Faced</h3>
+
+          <ul className="space-y-3">
+            {project.challenges_faced.map((challenge_faced) => (
+              <li key={challenge_faced} className="flex items-start gap-3">
+                <span className="text-orange mt-1">✓</span>
+                <span>{challenge_faced}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* Future Plans */}
+        <div className="mt-8">
+          <h3 className="text-xl font-semibold mb-4">Future Plans</h3>
+
+          <ul className="space-y-3">
+            {project.future_plans.map((future_plan) => (
+              <li key={future_plan} className="flex items-start gap-3">
+                <span className="text-orange mt-1">✓</span>
+                <span>{future_plan}</span>
               </li>
             ))}
           </ul>
@@ -130,7 +146,7 @@ export default function DetailsModal({ project, onClose }: Props) {
             href={project.live}
             target="_blank"
             rel="noopener noreferrer"
-            className=" flex items-center justify-center gap-2 rounded-full bg-primary px-4 sm:px-5 md:px-7 py-2.5 text-center font-medium text-white transition-all duration-300 hover:opacity-90 active:scale-90"
+            className=" flex items-center justify-center gap-2 rounded-full bg-primary px-5 md:px-7 py-2.5 text-center font-medium text-white transition-all duration-300 hover:opacity-90 active:scale-90"
           >
             Live
             <FaExternalLinkAlt className="text-sm" />

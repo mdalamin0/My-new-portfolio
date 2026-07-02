@@ -92,7 +92,7 @@ const skillCategories = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="scroll-mt-14 container py-16">
+    <section id="skills" className="scroll-mt-16 container py-16">
       {/* Section Heading */}
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -117,7 +117,7 @@ const Skills = () => {
         {skillCategories.map((category, index) => (
           <motion.div
             key={category.title}
-            initial={{ opacity: 0, x: index % 2 === 0 ? -40 : 40 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{

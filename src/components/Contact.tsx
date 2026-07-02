@@ -28,7 +28,7 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-setLoading(true);
+    setLoading(true);
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -63,17 +63,13 @@ setLoading(true);
       className="scroll-mt-24 container pt-16 pb-12 lg:py-18"
     >
       <div>
-        <div className="grid md:grid-cols-2 gap-12 md:gap-6 lg:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-6 lg:gap-20 items-center overflow-hidden">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 0.8,
-              ease: "easeOut",
-            }}
-            className=""
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <div className=" md:flex items-end  mb-8 text-center md:text-left">
               <div className="hidden md:block 0 h-[2px] w-40 bg-primary" />
@@ -136,11 +132,7 @@ setLoading(true);
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              duration: 0.8,
-              delay: 0.15,
-              ease: "easeOut",
-            }}
+            transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
             onSubmit={handleSubmit}
             className="border border-white/10 rounded-xl p-6 md:p-8"
           >
