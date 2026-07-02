@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "motion/react";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
+import { useState } from "react";
+import DetailsModal, { Project } from "./DetailsModal ";
 
 const projects = [
   {
@@ -13,6 +15,13 @@ const projects = [
     image: "/images/project1.jpg",
     type: "Frontend",
     technologies: ["React.js", "Tailwind CSS", "Context API", "Firebase"],
+    features: [
+      "Developed a responsive news portal with category-based filtering and dynamic content rendering.",
+      "Implemented protected routes with authentication (Email/Password, Google, GitHub) using Firebase.",
+      "Built a dynamic news details page with conditional navigation (redirect to login if unauthenticated).",
+      "Integrated real-time UI features like live date display and latest news marquee",
+      "Responsive design for all devices",
+    ],
     repo: "https://github.com/mdalamin0/The-Dragon-News-Hub",
     live: "https://the-dragon-news-hub.web.app/category/0",
   },
@@ -29,6 +38,13 @@ const projects = [
       "Tailwind CSS",
       "LocalStorage",
       "Axios",
+    ],
+    features: [
+      "Developed a responsive web application to browse trending and all apps with a clean card-based UI.",
+      "Implemented dynamic routing to display individual app details pages with full information.",
+      "Integrated an app installation system using Local Storage with real-time UI updates.",
+      "Built an installation management page allowing users to view and uninstall apps with persistent datahandling.",
+      "Responsive design for all devices",
     ],
     repo: "https://github.com/mdalamin0/Hero-IO-App-House",
     live: "https://hero-io-app-house.vercel.app/",
@@ -48,12 +64,37 @@ const projects = [
       "JWT",
       "bcryptjs ",
     ],
+    features: [
+      "Built a role-based issue tracking system for managing bugs and feature requests.",
+      "Implemented issue creation, status tracking, updating, and deletion workflows",
+      " Added secure user authentication and protected access to project resources.",
+      
+    ],
     repo: "https://github.com/mdalamin0/DevPulse",
     live: "https://dev-pulse-six-mu.vercel.app",
   },
+  // {
+  //   id: 4,
+  //   title: "PrismaPress: ArticleHub Backend API",
+  //   description:
+  //     "A production-ready content management backend that supports authentication, user profiles, article publishing, comment moderation, admin controls, content analytics, and advanced querying for modern blogging platforms.",
+  //   image: "/images/project3.png",
+  //   type: "Backend",
+  //   technologies: [
+  //     "TypeScript",
+  //     "Node.js",
+  //     "Express.js",
+  //     "PostgreSQL",
+  //     "Prisma",
+  //     "JWT",
+  //   ],
+  //   repo: "https://github.com/mdalamin0/DevPulse",
+  //   live: "https://dev-pulse-six-mu.vercel.app",
+  // },
 ];
 
 const Projects = () => {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   return (
     <section id="projects" className="scroll-mt-20 container py-16">
       {/* Section Title */}
@@ -136,7 +177,7 @@ const Projects = () => {
 
               {/* Buttons */}
               <div className="mt-auto flex gap-4 pt-6">
-                <a
+                {/* <a
                   href={project.repo}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -144,7 +185,7 @@ const Projects = () => {
                 >
                   Repository
                   <FaGithub />
-                </a>
+                </a> */}
 
                 <a
                   href={project.live}
@@ -155,11 +196,22 @@ const Projects = () => {
                   Live
                   <FaExternalLinkAlt className="text-sm" />
                 </a>
+                <button
+                  onClick={() => setSelectedProject(project)}
+                  className="flex-1 flex items-center justify-center gap-2 text-center  btn-outline active:scale-90"
+                >
+                  Details
+                  <FaArrowRight />
+                </button>
               </div>
             </div>
           </motion.div>
         ))}
       </div>
+      <DetailsModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
     </section>
   );
 };

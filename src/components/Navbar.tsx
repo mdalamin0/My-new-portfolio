@@ -21,7 +21,14 @@ export default function Navbar() {
   };
 
   useEffect(() => {
-    const sections = ["home", "about", "skills", "projects", "contact"];
+    const sections = [
+      "home",
+      "about",
+      "skills",
+      "education",
+      "projects",
+      "contact",
+    ];
 
     const handleScroll = () => {
       sections.forEach((id) => {
@@ -104,6 +111,16 @@ export default function Navbar() {
               }`}
             >
               Skills
+            </Link>
+            <Link
+              href="#education"
+              className={`font-medium transition-all duration-200 ${
+                activeSection === "education"
+                  ? "text-orange border-b border-[#FF715A]"
+                  : "hover:text-[#FF715A]"
+              }`}
+            >
+              Education
             </Link>
 
             <Link
@@ -204,6 +221,16 @@ export default function Navbar() {
               }`}
             >
               Skills
+            </button>
+            <button
+              onClick={() => handleMobileScroll("education")}
+              className={`py-2 text-sm font-medium transition-all duration-300 ${
+                activeSection === "education"
+                  ? "text-orange border-b border-[#FF715A]"
+                  : "hover:text-[#FF715A]"
+              }`}
+            >
+              Education
             </button>
 
             <button
