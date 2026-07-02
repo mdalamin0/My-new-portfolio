@@ -259,7 +259,7 @@ const ContactSection = () => {
                 type="submit"
                 disabled={loading}
                 className={`btn-primary inline-flex items-center justify-center ${
-                  loading ? "opacity-70 cursor-not-allowed cu" : ""
+                  loading ? "opacity-70 cursor-not-allowed " : "cursor-pointer"
                 }`}
               >
                 {loading ? "Sending..." : "Send Message"}

@@ -21,7 +21,6 @@ import {
   SiMongodb,
   SiPostman,
   SiVercel,
-  SiFigma,
   SiOpenai,
   SiClaude
 } from "react-icons/si";

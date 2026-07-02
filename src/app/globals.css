@@ -42,7 +42,7 @@ html {
 
 .btn-primary,
 .btn-whatsapp {
-  @apply text-white font-medium py-2.5 rounded-full cursor-pointer flex items-center justify-center whitespace-nowrap;
+  @apply text-white font-medium py-2.5 rounded-full flex items-center justify-center whitespace-nowrap;
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
   will-change: transform;
   min-width: 0;
