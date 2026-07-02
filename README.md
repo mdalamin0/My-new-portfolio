@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 MD Al-amin Portfolio
 
-## Getting Started
+A modern and fully responsive developer portfolio built to showcase my skills, projects, education, and professional journey as a Full Stack Developer. The portfolio features smooth animations, a clean user interface, and a functional contact system for seamless communication.
 
-First, run the development server:
+## 🌐 Live Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+**Live Site:** https://md-alamin-portfolio.vercel.app
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📌 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* Responsive design for mobile, tablet, and desktop devices
+* Modern and clean UI with smooth animations
+* Interactive project showcase with detailed project modals
+* Skills section categorized by technology stack
+* Education timeline section
+* Functional contact form with email integration
+* Social media links for easy connectivity
+* Active navigation highlighting based on scroll position
+* Optimized performance and user experience
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+### Frontend
 
-To learn more about Next.js, take a look at the following resources:
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Framer Motion
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Tools & Services
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* Resend
+* React Toastify
+* Git & GitHub
+* Vercel
+* Figma
 
-## Deploy on Vercel
+## 📂 Sections Included
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* Hero Section
+* About Me
+* Skills
+* Education
+* Projects
+* Contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📧 Contact
+
+If you would like to discuss a project, collaboration, or opportunity, feel free to reach out.
+
+Email: [muhammadalamin809@gmail.com](mailto:muhammadalamin809@gmail.com)
+
+LinkedIn: [https://www.linkedin.com/in/md-al-amin-60aa32219](https://www.linkedin.com/in/md-al-amin-60aa32219/)
+
+GitHub: https://github.com/mdalamin0
+
+## 👨‍💻 Author
+
+**Md. Al-amin**
+
+Full Stack Developer passionate about building scalable, user-friendly, and modern web applications.
