@@ -9,10 +9,69 @@ import DetailsModal, { Project } from "./DetailsModal ";
 const projects = [
   {
     id: 1,
+    title: "GearUp - Sports & Outdoor Gear Rental Platform",
+    description:
+      "GearUp is a full-stack sports and outdoor gear rental platform that allows customers to discover and rent equipment, providers to manage their gear and rental orders, and administrators to oversee the entire platform. The application features role-based authentication and dashboards, protected routes with intelligent redirection, gear search and filtering, rental management with date-based pricing and stock validation, SSLCommerz payment integration, customer reviews, and Google authentication for customers. Built with Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, PostgreSQL, and Prisma ORM, the project demonstrates full-stack development skills across frontend architecture, REST API development, authentication, authorization, database management, payment processing, validation, error handling, and responsive UI design.",
+
+    image: "/images/project.png",
+
+    type: "Full Stack",
+
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "JWT",
+      "SSLCommerz",
+    ],
+
+    features: [
+      "Role-based authentication with separate Customer, Provider, and Admin dashboards.",
+
+      "Built gear discovery with category filtering, search, sorting, and provider inventory management.",
+
+      "Implemented rental booking with date-based pricing, quantity validation, and real-time stock checks.",
+
+      "Integrated SSLCommerz for secure payment initiation, verification, and transaction tracking.",
+
+      "Added customer reviews with validation based on completed rental and returned gear.",
+
+      "Developed responsive UI with protected routes, reusable components, loading states, and user-friendly error handling.",
+    ],
+
+    challenges_faced: [
+      "While implementing role-based authentication, I faced challenges in protecting dashboard routes and maintaining proper login redirection.",
+
+      "While building the rental system, I faced challenges in handling rental dates, stock, quantity, and automatic price calculation.",
+
+      "While integrating SSLCommerz, I faced challenges in managing payment initiation, verification, and the complete rental payment flow.",
+
+      "While connecting the Next.js frontend with the Express.js backend, I faced challenges in handling authentication cookies, API errors, and secure communication.",
+    ],
+
+    future_plans: [
+      "Implement advanced gear availability management based on overlapping rental dates.",
+
+      "Add provider analytics with rental revenue, popular gear, and order performance statistics.",
+
+      "Introduce wishlist and favorite gear functionality for customers.",
+    ],
+
+    frontendRepo: "https://github.com/mdalamin0/GearUp-Frontend",
+    backendRepo: "https://github.com/mdalamin0/GearUp-Backend",
+
+    live: "https://gear-up-frontend-one.vercel.app",
+  },
+  {
+    id: 2,
     title: "The Dragon News Hub",
     description:
       "The Dragon News Hub is a modern and fully responsive news web application that provides users with an engaging and seamless news-reading experience. The platform allows users to explore news through category-based filtering, access detailed articles via dynamic routing, and securely authenticate using Email/Password, Google, or GitHub accounts. It features protected routes with intelligent redirection to preserve user navigation flow, a dynamic news details page with extended content viewing, and real-time elements such as a live date display and breaking news marquee. Built with React.js, React Router, Context API, and Firebase Authentication, the application demonstrates strong frontend development skills in authentication, state management, routing, responsive UI design, and modern React architecture while delivering a clean, user-friendly, and performance-focused experience across all devices.",
-    image: "/images/project1.jpg",
+    image: "/images/news-dragon.jpg",
     type: "Frontend",
     technologies: [
       "React.js",
@@ -40,41 +99,6 @@ const projects = [
     ],
     repo: "https://github.com/mdalamin0/The-Dragon-News-Hub",
     live: "https://the-dragon-news-hub.web.app/category/0",
-  },
-  {
-    id: 2,
-    title: "Hero App House",
-    description:
-      "Hero App House is a responsive web application that enables users to discover and explore trending applications through a clean and intuitive interface. Users can access detailed app pages with comprehensive information and manage installations through a persistent app management system. The application features dynamic routing, real-time installation status updates, and LocalStorage-based data persistence, ensuring a seamless experience across browsing sessions. A dedicated installation management page allows users to view and uninstall apps effortlessly, demonstrating efficient client-side data handling, interactive user experiences, and responsive frontend development practices.",
-    image: "/images/project2.jpg",
-    type: "Frontend",
-    technologies: [
-      "JavaScript (ES6+)",
-      "React.js",
-      "Tailwind CSS",
-      "LocalStorage",
-      "Axios",
-    ],
-
-    features: [
-      "Developed a responsive web application to browse trending and all apps with a clean card-based UI.",
-      "Implemented dynamic routing to display individual app details pages with full information.",
-      "Integrated an app installation system using Local Storage with real-time UI updates.",
-      "Built an installation management page allowing users to view and uninstall apps with persistent datahandling.",
-      "Responsive design for all devices",
-    ],
-    challenges_faced: [
-      "While implementing the installation system, ensuring that app data remained persistent across page reloads using LocalStorage was a key challenge.",
-      "Managing real-time UI updates for installation states (Install → Installed → Disabled) without requiring a page refresh required careful state synchronization.",
-    ],
-    future_plans: [
-      "Add user authentication to allow users to manage their installed apps across multiple devices.",
-      "Integrate a backend database for storing installation data instead of relying solely on LocalStorage.",
-      "Develop an admin dashboard for managing and publishing applications dynamically.",
-      "Introduce pagination and lazy loading to improve performance when handling larger app collections.",
-    ],
-    repo: "https://github.com/mdalamin0/Hero-IO-App-House",
-    live: "https://hero-io-app-house.vercel.app/",
   },
   {
     id: 3,
@@ -113,24 +137,6 @@ const projects = [
     repo: "https://github.com/mdalamin0/DevPulse",
     live: "https://dev-pulse-six-mu.vercel.app",
   },
-  // {
-  //   id: 4,
-  //   title: "PrismaPress: ArticleHub Backend API",
-  //   description:
-  //     "A production-ready content management backend that supports authentication, user profiles, article publishing, comment moderation, admin controls, content analytics, and advanced querying for modern blogging platforms.",
-  //   image: "/images/project3.png",
-  //   type: "Backend",
-  //   technologies: [
-  //     "TypeScript",
-  //     "Node.js",
-  //     "Express.js",
-  //     "PostgreSQL",
-  //     "Prisma",
-  //     "JWT",
-  //   ],
-  //   repo: "https://github.com/mdalamin0/DevPulse",
-  //   live: "https://dev-pulse-six-mu.vercel.app",
-  // },
 ];
 
 const Projects = () => {
@@ -247,6 +253,7 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
+
       <DetailsModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}

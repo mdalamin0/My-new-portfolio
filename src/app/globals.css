@@ -23,6 +23,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: #0f172a;
+  color: var(--foreground);
+}
 
 .container {
   @apply max-w-[1300px] mx-auto px-4 md:px-6;
@@ -112,9 +116,4 @@ html {
   color: #FF715A;
   background: rgba(255, 113, 90, 0.1);
   border: 1px solid rgba(255, 113, 90, 0.2);
-}
-
-body {
-  background: #0f172a;
-  color: var(--foreground);
 }
