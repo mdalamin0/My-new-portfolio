@@ -22,7 +22,8 @@ import {
   SiPostman,
   SiVercel,
   SiOpenai,
-  SiClaude
+  SiClaude,
+  SiRedis
 } from "react-icons/si";
 
 
@@ -70,7 +71,7 @@ const skillCategories = [
         name: "PostgreSQL",
         icon: <SiPostgresql className="text-blue-500" />,
       },
-      { name: "Prisma", icon: <SiPrisma /> },
+      { name: "Redis", icon: <SiRedis className="text-orange-500" /> },
       { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
     ],
   },
@@ -78,11 +79,12 @@ const skillCategories = [
   {
     title: "Tools",
     skills: [
+      { name: "Prisma ORM", icon: <SiPrisma /> },
       { name: "Git", icon: <FaGitAlt className="text-orange-500" /> },
       { name: "GitHub", icon: <FaGithub /> },
       { name: "Postman", icon: <SiPostman className="text-orange-400" /> },
       { name: "Vercel", icon: <SiVercel /> },
-      { name: "Figma", icon: <FigmaIcon/> },
+      { name: "Figma", icon: <FigmaIcon /> },
       { name: "ChatGPT", icon: <SiOpenai className="text-green-500" /> },
       { name: "Claude", icon: <SiClaude className="text-[#D97757]" /> },
     ],

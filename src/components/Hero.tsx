@@ -31,10 +31,9 @@ const HeroSection = () => {
           </div>
 
           <div className="relative mt-6 lg:mt-8 flex items-center justify-center md:justify-start">
-
             <div>
               <h3 className="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl ">
-              Md Alamin
+                Md Alamin
               </h3>
               <div className="mx-auto  mt-2 md:hidden h-[2px] w-40 bg-primary" />
             </div>
@@ -59,8 +58,8 @@ const HeroSection = () => {
 
           <div className="mt-8 flex w-full justify-center md:justify-start flex-row gap-2 sm:gap-3  ">
             <a
-              href="resume/resume.pdf"
-              download="Md-Alamin-Resume.pdf"
+              href="resume/Md_Al-amin_Full-Stack_Developer.pdf"
+              download="Md_Al-amin_Full-Stack_Developer.pdf"
               className="btn-primary flex-1 sm:flex-none"
             >
               <span className="md:hidden">Resume</span>

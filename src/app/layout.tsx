@@ -8,7 +8,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Al-Amin Portfolio",
+  title: "Al-amin Portfolio",
   description: "Full Stack Developer Portfolio",
 };
 
