@@ -11,6 +11,46 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --animate-float-slow: floatSlow 8s ease-in-out infinite;
+  --animate-float-medium: floatMedium 6s ease-in-out infinite;
+  --animate-float-reverse: floatReverse 10s ease-in-out infinite;
+}
+
+@keyframes floatSlow {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(15px, -20px);
+  }
+}
+
+@keyframes floatMedium {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-20px, -15px);
+  }
+}
+
+@keyframes floatReverse {
+
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(20px, 20px);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +59,7 @@
     --foreground: #ededed;
   }
 }
+
 html {
   scroll-behavior: smooth;
 }

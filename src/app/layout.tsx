@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Sora } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
+import BackgroundDecoration from "@/components/shared/BackgroundDecoration";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -20,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={sora.className}>
+        <BackgroundDecoration />
         {children}
         <ToastContainer/>
       </body>

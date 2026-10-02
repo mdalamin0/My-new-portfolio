@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import { FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import { useState } from "react";
 import DetailsModal, { Project } from "./DetailsModal ";
@@ -161,6 +161,26 @@ const projects = [
   },
 ];
 
+const cardVariants: Variants= {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: "spring",
+      stiffness: 55,
+      damping: 14,
+      delay:
+        typeof window !== "undefined" && window.innerWidth >= 768
+          ? index * 0.15
+          : 0,
+    },
+  }),
+};
+
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   return (
@@ -189,15 +209,23 @@ const Projects = () => {
         {projects.map((project, index) => (
           <motion.div
             key={project.id}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{
-              duration: 0.8,
-              delay: index * 0.15,
-              ease: "easeOut",
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            custom={index} 
+            viewport={{
+              once: true,
+              amount:
+                typeof window !== "undefined" && window.innerWidth >= 768
+                  ? 0.1
+                  : 0.2,
             }}
-            className=" group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FF715A]/30 hover:shadow-[0_15px_35px_rgba(255,113,90,0.12)]"
+            whileHover={{
+              y: -8,
+              borderColor: "rgba(255, 113, 90, 0.3)",
+              boxShadow: "0px 15px 35px rgba(255, 113, 90, 0.12)",
+            }}
+            className="group flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-sm transition-shadow duration-300"
           >
             {/* Image */}
             <div className="relative overflow-hidden">
@@ -244,16 +272,6 @@ const Projects = () => {
 
               {/* Buttons */}
               <div className="mt-auto flex gap-4 pt-6">
-                {/* <a
-                  href={project.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 text-center  btn-outline active:scale-90"
-                >
-                  Repository
-                  <FaGithub />
-                </a> */}
-
                 <a
                   href={project.live}
                   target="_blank"
@@ -265,7 +283,7 @@ const Projects = () => {
                 </a>
                 <button
                   onClick={() => setSelectedProject(project)}
-                  className="flex-1 flex items-center justify-center gap-2 text-center  btn-outline active:scale-90"
+                  className="flex-1 flex items-center justify-center gap-2 text-center btn-outline active:scale-90"
                 >
                   Details
                   <FaArrowRight />

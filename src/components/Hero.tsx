@@ -60,7 +60,7 @@ const HeroSection = () => {
           <div className="mt-8 flex w-full justify-center md:justify-start flex-row gap-2 sm:gap-3  ">
             <a
               href="resume/Md_Al-amin_Full-Stack_Developer_Resume.pdf"
-              download="Md_Al-amin_Full-Stack_Developer.pdf"
+              download="Md Al-amin Full-Stack Developer Resume.pdf"
               className="btn-primary flex-1 sm:flex-none"
             >
               <span className="md:hidden">Resume</span>
