@@ -5,6 +5,7 @@ import { IoMdDownload } from "react-icons/io";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "motion/react";
 import { TypeAnimation } from "react-type-animation";
+import SocialMedia from "./shared/social-media";
 
 const HeroSection = () => {
   return (
@@ -58,7 +59,7 @@ const HeroSection = () => {
 
           <div className="mt-8 flex w-full justify-center md:justify-start flex-row gap-2 sm:gap-3  ">
             <a
-              href="resume/Md_Al-amin_Full-Stack_Developer.pdf"
+              href="resume/Md_Al-amin_Full-Stack_Developer_Resume.pdf"
               download="Md_Al-amin_Full-Stack_Developer.pdf"
               className="btn-primary flex-1 sm:flex-none"
             >
@@ -79,6 +80,9 @@ const HeroSection = () => {
               <span className="hidden lg:inline">Chat on WhatsApp</span>
               <FaWhatsapp className="text-xl ml-2" />
             </a>
+          </div>
+          <div className="mt-7  pt-6">
+            <SocialMedia />
           </div>
         </motion.div>
 

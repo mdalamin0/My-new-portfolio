@@ -68,6 +68,65 @@ const projects = [
   },
   {
     id: 2,
+    title: "DevAssess - Developer Assessment & Coding Platform",
+    description:
+      "DevAssess is a full-stack developer assessment platform that allows recruiters to create and manage assessments, build reusable MCQ problem banks, invite candidates, evaluate submissions, and track results, while candidates can accept invitations and take timed assessments. The platform features role-based authentication and dashboards, protected routes, assessment and problem management, candidate invitations, timed assessment workflows, result tracking, audit logs, and bKash payment integration for paid assessments. Built with Next.js, React, TypeScript, Tailwind CSS, Node.js, Express.js, PostgreSQL, Prisma ORM, Redis, JWT, and Zod, the project demonstrates full-stack development skills across frontend architecture, REST API development, authentication, authorization, database management, payment processing, validation, caching, and responsive UI design.",
+
+    image: "/images/dev-assess.png",
+
+    type: "Full Stack",
+
+    technologies: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Redis",
+      "JWT",
+      "bKash",
+      "Zod",
+    ],
+
+    features: [
+      "Built recruiter assessment workflows with Next.js, Express & PostgreSQL, streamlining assessment creation, candidate invitations, timed evaluation, and result tracking.",
+      "Engineered reusable MCQ problem management with React, Prisma & Zod, reducing repetitive assessment setup and improving question consistency.",
+      "Implemented candidate invitation workflows with Express & Nodemailer, automatically notifying candidates by email to ensure assessment invitations are not missed.",
+      "Integrated bKash Tokenized Checkout with Express & PostgreSQL, ensuring paid assessments are published only after successful payment verification and validation.",
+      "Developed secure role-based dashboards with Next.js, JWT & Redis, enabling candidates, recruiters, and admins to manage assessments and platform activities efficiently.",
+    ],
+
+    challenges_faced: [
+      "While implementing role-based authentication, I faced challenges in protecting dashboard routes and maintaining proper role-based access and redirection.",
+
+      "While building the assessment workflow, I faced challenges in managing invitations, assessment availability, timed attempts, answer submission, and result generation.",
+
+      "While integrating bKash, I faced challenges in handling payment initiation, token management, verification, failed payments, and payment-gated assessment publishing.",
+
+      "While connecting the Next.js frontend with the Express.js backend, I faced challenges in handling authentication cookies, API errors, caching, and secure communication.",
+    ],
+
+    future_plans: [
+      "Introduce public practice assessments with instant auto-evaluation and result feedback for candidates.",
+
+      "Add advanced recruiter analytics with assessment performance, candidate scores, and evaluation statistics.",
+
+      "Expand the assessment system with additional question types and more detailed candidate performance reports.",
+    ],
+
+    frontendRepo:
+      "https://github.com/mdalamin0/Developer-Assessment-Coding-Platform-Frontend",
+
+    backendRepo:
+      "https://github.com/mdalamin0/Developer-Assessment-Coding-Platform",
+
+    live: "https://developer-assessment-coding-platfor-pi.vercel.app",
+  },
+  {
+    id: 3,
     title: "The Dragon News Hub",
     description:
       "The Dragon News Hub is a modern and fully responsive news web application that provides users with an engaging and seamless news-reading experience. The platform allows users to explore news through category-based filtering, access detailed articles via dynamic routing, and securely authenticate using Email/Password, Google, or GitHub accounts. It features protected routes with intelligent redirection to preserve user navigation flow, a dynamic news details page with extended content viewing, and real-time elements such as a live date display and breaking news marquee. Built with React.js, React Router, Context API, and Firebase Authentication, the application demonstrates strong frontend development skills in authentication, state management, routing, responsive UI design, and modern React architecture while delivering a clean, user-friendly, and performance-focused experience across all devices.",
@@ -99,43 +158,6 @@ const projects = [
     ],
     repo: "https://github.com/mdalamin0/The-Dragon-News-Hub",
     live: "https://the-dragon-news-hub.web.app/category/0",
-  },
-  {
-    id: 3,
-    title: "DevPulse Issue Tracker API",
-    description:
-      "DevPulse is a RESTful Issue Tracking API designed to streamline bug reporting and feature request management through a secure and role-based workflow. The system enables contributors to create and manage issues while maintainers can oversee project tasks with controlled access permissions. It features JWT-based authentication, secure password hashing, role-based authorization, and complete CRUD operations for issue management. Built with a modular backend architecture and PostgreSQL database integration, the API follows clean REST principles and provides structured issue data, including reporter information, ensuring secure, scalable, and maintainable server-side application development.",
-    image: "/images/project3.png",
-    type: "Backend",
-    technologies: [
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "PostgreSQL",
-      "JWT",
-      "bcryptjs ",
-    ],
-    features: [
-      "Built a role-based issue tracking system for managing bugs and feature requests.",
-      "Implemented secure JWT-based authentication with protected API routes and role-based authorization.",
-      "Developed complete CRUD functionality for creating, updating, tracking, and deleting issues.",
-      "Integrated PostgreSQL for efficient data storage and management of users and issue records.",
-      "Added secure password hashing using bcryptjs to enhance user account security.",
-      "Designed a modular and scalable Express.js architecture for improved maintainability and code organization.",
-    ],
-    challenges_faced: [
-      "When I am Implementing secure JWT authentication and role-based access control.",
-      "Designing scalable database relationships between users and issues.",
-      "Managing authorization rules and protected API endpoints.",
-    ],
-    future_plans: [
-      "Add issue assignment and notification systems.",
-      "Implement advanced search and filtering capabilities.",
-      "Support file uploads for issue reporting.",
-      "Build a frontend dashboard and add automated testing.",
-    ],
-    repo: "https://github.com/mdalamin0/DevPulse",
-    live: "https://dev-pulse-six-mu.vercel.app",
   },
 ];
 

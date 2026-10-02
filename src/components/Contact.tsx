@@ -8,6 +8,7 @@ import { BsLinkedin } from "react-icons/bs";
 import Image from "next/image";
 import { SlLocationPin } from "react-icons/sl";
 import { toast } from "react-toastify";
+import SocialMedia from "./shared/social-media";
 
 const ContactSection = () => {
   const [loading, setLoading] = useState(false);
@@ -264,39 +265,9 @@ const ContactSection = () => {
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>
-
+              <div className="border-t-2 border-white/10 mt-10  pt-6" />
               {/* SOCIAL */}
-              <div className="lg:flex text-center items-center gap-3 xl:gap-4 mt-10 border-t-2 border-white/10 pt-6">
-                <h4 className="font-medium mb-2 lg:mb-0">
-                  Follow Me on Social Media:
-                </h4>
-
-                <div className="flex items-center justify-center gap-4">
-                  <a
-                    href="https://www.facebook.com/md.al.amin.626694"
-                    target="_blank"
-                    className="social-btn"
-                  >
-                    <FaFacebookF />
-                  </a>
-
-                  <a
-                    href="https://www.linkedin.com/in/md-al-amin-60aa32219/"
-                    target="_blank"
-                    className="social-btn"
-                  >
-                    <BsLinkedin />
-                  </a>
-
-                  <a
-                    href="https://github.com/mdalamin0"
-                    target="_blank"
-                    className="social-btn"
-                  >
-                    <FaGithub />
-                  </a>
-                </div>
-              </div>
+              <SocialMedia />
             </div>
           </motion.form>
         </div>
