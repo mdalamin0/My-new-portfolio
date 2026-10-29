@@ -334,10 +334,23 @@ const Projects = () => {
         ))}
       </div>
 
+      {/* See All / See Less Button */}
       {projects.length > 3 && (
         <div className="flex justify-center mt-12">
           <button
-            onClick={() => setShowAll(!showAll)}
+            onClick={() => {
+              if (showAll) {
+                document
+                  .getElementById("projects")
+                  ?.scrollIntoView({ behavior: "smooth" });
+
+                setTimeout(() => {
+                  setShowAll(false);
+                }, 300);
+              } else {
+                setShowAll(true);
+              }
+            }}
             className="btn-outline"
           >
             {showAll ? "See Less" : "See All Projects"}
