@@ -9,6 +9,43 @@ import DetailsModal, { Project } from "./DetailsModal ";
 const projects = [
   {
     id: 1,
+    title:
+      "PromptShare Hub - AI Prompt Engineering with a Live AI Chat Sandbox",
+    description:
+      "PromptShare Hub is real-time AI chat platform and premium prompt management studio designed for modern developers. It empowers users to host production-ready prompt matrices, inject dynamic schema parameters, clone masterpieces instantly, and execute live testing prompts through an elite, high-speed streaming AI pipeline. The entire marketplace delivers a zero-latency, highly interactive sandbox backed by strict type-safety, absolute reactive synchronization, and zero-config public routing.",
+    image: "/images/promptshare.png",
+    type: "Full Stack",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "PostgreSQL",
+      "Prisma ORM",
+      "Zod",
+      "Redis",
+    ],
+    features: [
+      "Zero-latency live AI sandbox powered by high-speed Groq-Qwen inference pipelines, delivering instant ChatGPT-style token streaming without external lag or VPN bottlenecks.",
+      "Sleek prompt organization workspace to seamlessly catalog, tag, and structure your high-utility prompt configurations directly within a personalized repository matrix.",
+      "Instant 1-click duplication nodes allowing developers to flawlessly clone community masterpieces from the global public registry into their private workspace.",
+      "Dynamic access control toggles to securely lock commercial scripts in isolated private slots or instantly deploy them to the open-source global stream.",
+    ],
+    challenges_faced: [
+      "Resolved strict Vercel production edge buffering locks by injecting custom stream proxy headers (X-Accel-Buffering: no) to achieve fluid, low-latency live text transmission.",
+      "Fixed server crashes caused by legacy AI model deprecations by seamlessly updating the pipeline code to target active high-performance production endpoints.",
+      "Eliminated asynchronous rendering bugs where the streaming response container appeared empty on screen due to improper reactive loading state flags.",
+    ],
+    future_plans: [
+      "Implement an advanced AI Prompt Improver model to automatically optimize compiled prompt instructions before executing API cycles.",
+      "Add detailed workspace analytics tracking prompt usage counters, variable injection frequencies, and public fork propagation trees.",
+      "Introduce a granular version control log allowing prompt authors to save snapshot branches of their script structures.",
+    ],
+    frontendRepo: "https://github.com/mdalamin0/Prompt-Share-Frontend",
+    backendRepo: "https://github.com/mdalamin0/Prompt-Share-Backend",
+    live: "https://prompt-share-frontend.vercel.app",
+  },
+  {
+    id: 2,
     title: "GearUp - Sports & Outdoor Gear Rental Platform",
     description:
       "GearUp is a full-stack sports and outdoor gear rental platform that allows customers to discover and rent equipment, providers to manage their gear and rental orders, and administrators to oversee the entire platform. The application features role-based authentication and dashboards, protected routes with intelligent redirection, gear search and filtering, rental management with date-based pricing and stock validation, SSLCommerz payment integration, customer reviews, and Google authentication for customers. Built with Next.js, TypeScript, Tailwind CSS, Node.js, Express.js, PostgreSQL, and Prisma ORM, the project demonstrates full-stack development skills across frontend architecture, REST API development, authentication, authorization, database management, payment processing, validation, error handling, and responsive UI design.",
@@ -67,7 +104,7 @@ const projects = [
     live: "https://gear-up-frontend-one.vercel.app",
   },
   {
-    id: 2,
+    id: 3,
     title: "DevAssess - Developer Assessment & Coding Platform",
     description:
       "DevAssess is a full-stack developer assessment platform that allows recruiters to create and manage assessments, build reusable MCQ problem banks, invite candidates, evaluate submissions, and track results, while candidates can accept invitations and take timed assessments. The platform features role-based authentication and dashboards, protected routes, assessment and problem management, candidate invitations, timed assessment workflows, result tracking, audit logs, and bKash payment integration for paid assessments. Built with Next.js, React, TypeScript, Tailwind CSS, Node.js, Express.js, PostgreSQL, Prisma ORM, Redis, JWT, and Zod, the project demonstrates full-stack development skills across frontend architecture, REST API development, authentication, authorization, database management, payment processing, validation, caching, and responsive UI design.",
@@ -126,7 +163,7 @@ const projects = [
     live: "https://developer-assessment-coding-platfor-pi.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "The Dragon News Hub",
     description:
       "The Dragon News Hub is a modern and fully responsive news web application that provides users with an engaging and seamless news-reading experience. The platform allows users to explore news through category-based filtering, access detailed articles via dynamic routing, and securely authenticate using Email/Password, Google, or GitHub accounts. It features protected routes with intelligent redirection to preserve user navigation flow, a dynamic news details page with extended content viewing, and real-time elements such as a live date display and breaking news marquee. Built with React.js, React Router, Context API, and Firebase Authentication, the application demonstrates strong frontend development skills in authentication, state management, routing, responsive UI design, and modern React architecture while delivering a clean, user-friendly, and performance-focused experience across all devices.",
@@ -161,7 +198,7 @@ const projects = [
   },
 ];
 
-const cardVariants: Variants= {
+const cardVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 50,
@@ -182,7 +219,10 @@ const cardVariants: Variants= {
 };
 
 const Projects = () => {
+   const [showAll, setShowAll] = useState(false);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const visibleProjects = showAll ? projects : projects.slice(0, 3);
+
   return (
     <section id="projects" className="scroll-mt-20 container py-12">
       {/* Section Title */}
@@ -206,13 +246,13 @@ const Projects = () => {
 
       {/* Projects Grid */}
       <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <motion.div
             key={project.id}
             variants={cardVariants}
             initial="hidden"
             whileInView="visible"
-            custom={index} 
+            custom={index}
             viewport={{
               once: true,
               amount:
@@ -293,6 +333,17 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
+
+      {projects.length > 3 && (
+        <div className="flex justify-center mt-12">
+          <button
+            onClick={() => setShowAll(!showAll)}
+            className="btn-outline"
+          >
+            {showAll ? "See Less" : "See All Projects"}
+          </button>
+        </div>
+      )}
 
       <DetailsModal
         project={selectedProject}
